@@ -9,17 +9,19 @@
 	$response=array();
 
 	if( isset($_GET['user']) && strlen($_GET['user']) ){
-		
+				
 		$query="SELECT username FROM users WHERE username='".$_GET['user']."'";
 		$result=mysqli_query($conn,$query);
 
 		$row_number=mysqli_num_rows($result);
+		mysqli_close($conn);
 
 		// Non presente
 		if($row_number==0){
 
+			$conn = mysqli_connect($servername, $username, $password,$database); 
 			$query="INSERT INTO users VALUES ('".$_GET['user']."')";
-			echo $query;
+
 			$result=mysqli_query($conn,$query);
 
 			// Query riuscita

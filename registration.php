@@ -4,7 +4,7 @@
 	$database = "provinceitaliane";
 	$password = "bnGlNf9YxIst";
 
-	$conn = mysqli_connect($servername, $username, $password,$database); 
+	$conn = mysqli_connect($servername,$username,$password,$database); 
 
 	$response=array();
 
@@ -36,8 +36,9 @@
 			// Query fallita
 				else{
 
-				$response["message"]="Oops! Registration failed!";
-				$response["success"]=0;
+					$response["message"]="Oops! Registration failed!";
+					$response["success"]=0;
+					$response["error"]="Error :".mysqli_error($conn);
 				
 				}
 			}

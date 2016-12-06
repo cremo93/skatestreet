@@ -7,7 +7,7 @@
 	$conn = mysqli_connect($servername,$username,$password,$database); 
 	
 	$response=array();
-	if($conn
+
 	if( isset($_GET['user']) && strlen($_GET['user']) ){
 		
 		$query="SELECT username FROM users WHERE username='".$_GET['user']."'";

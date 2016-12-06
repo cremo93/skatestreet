@@ -17,7 +17,7 @@
 
 		// Non presente
 		if($row_number==0){
-			$query="INSERT INTO users (username) VALUES ('".$_GET['user']."')";
+			$query="INSERT INTO users VALUES ('".$_GET['user']."')";
 			$result=mysqli_query($conn,$query);
 
 			// Query riuscita

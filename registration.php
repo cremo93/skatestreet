@@ -13,7 +13,7 @@
 		$query="SELECT username FROM users WHERE username='".$_GET['user']."'";
 		$result=mysqli_query($conn,$query);
 
-		if ($result){
+		if (!$result){
 			$response["message"]="Oops! Select query failed!";
 			$response["success"]=0;
 			

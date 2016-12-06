@@ -13,35 +13,42 @@
 		$query="SELECT username FROM users WHERE username='".$_GET['user']."'";
 		$result=mysqli_query($conn,$query);
 
-		$row_number=mysqli_num_rows($result);
+		if ($result){
+			$response["message"]="Oops! Select query failed!";
+			$response["success"]=0;
+			
+		}
+		else{
+			$row_number=mysqli_num_rows($result);
 
 		// Non presente
-		if($row_number==0){
+			if($row_number==0){
 
-			$query="INSERT INTO 'users' VALUES ('".$_GET['user']."')";
+				$query="INSERT INTO users VALUES ('".$_GET['user']."')";
 
-			$result_insert=mysqli_query($conn,$query);
+				$result_insert=mysqli_query($conn,$query);
 
 			// Query riuscita
-			if($result_insert){
-				$response["message"]="Perfect! Your username is ".$_GET['user']."";
-				$response["success"]=1;
-			}
+				if($result_insert){
+					$response["message"]="Perfect! Your username is ".$_GET['user']."";
+					$response["success"]=1;
+				}
 			// Query fallita
-			else{
+				else{
 
 				$response["message"]="Oops! Registration failed!";
 				$response["success"]=0;
-				$response["error"]=mysqli_error($conn);
+				
+				}
 			}
-		}
+		
 		
 		// Username già nel database
-		else{
-			$response["message"]="Try with another username! This one is already in our database!";
-			$response["success"]=0;
-		}	
-
+			else{
+				$response["message"]="Try with another username! This one is already in our database!";
+				$response["success"]=0;
+			}	
+		}
 	}
 	// username lungo o non in $_GET
 	else{

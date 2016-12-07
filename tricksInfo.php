@@ -9,11 +9,17 @@
 	$response=array();
 		
 	$pos=0;
+	$query="SELECT COUNT(*) as tot FROM tricks";
+	$result=mysqli_query($conn,$query);
 
+	$row=mysqli_fetch_array($result);
+
+	$count=$row['tot'];
+	
 	$query="SELECT * FROM tricks";
 
 	$result=mysqli_query($conn,$query);
-
+	
 	if($result){
 		$response["message"]="Get all info";
 		$response["success"]=1;
@@ -29,6 +35,7 @@
 			$pos++;
 		
 		}
+		$response["count"]=$count;
 	}
 
 	else{

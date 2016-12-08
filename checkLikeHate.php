@@ -33,7 +33,7 @@
 				
 
 			$response["success"]=1;
-			$response["message"]="Your hate or like!"
+			$response["message"]="Your hate or like!";
 		} // chiudo result
 
 		else{

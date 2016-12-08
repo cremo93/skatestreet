@@ -46,5 +46,6 @@
 		$response["message"]="Missing user!";
 
 	}
-
+	
+	echo json_encode($response);
 ?>

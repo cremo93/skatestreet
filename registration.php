@@ -8,7 +8,7 @@
 	
 	$response=array();
 
-	if( isset($_GET['user']) && strlen($_GET['user']) ){
+	if( isset($_GET['user']) && strlen($_GET['user'])<21 ){
 		
 		$query="SELECT username FROM users WHERE username='".$_GET['user']."'";
 		$result=mysqli_query($conn,$query);

@@ -9,9 +9,10 @@
 	$response=array();
 	
 	if (isset($_GET['user']) && isset($_GET['tricks']) && isset($_GET['flag'])){
-
+		//str_replace("world","Peter","Hello world!") REPLACE WORLD WITH PETER IN THE STRING HELLO WORLD
 		// flag=0->hate; flag=1->like
-		$query="DELETE FROM likes WHERE user='".$_GET['user']."' AND trick='".$_GET['trick']."'";
+		$_GET['tricks']=str_replace("_"," ",$_GET['tricks']);
+		$query="DELETE FROM likes WHERE user='".$_GET['user']."' AND trick='".$_GET['tricks']."'";
 		$result=mysqli_query($conn,$query);
 
 		if($result){

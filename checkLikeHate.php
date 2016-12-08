@@ -17,7 +17,7 @@
 		// query non corretta
 		if($result){
 			$pos=0;
-			$response=$row['tot'];
+			$response["count"]=$row['tot'];
 			//scandisci
 			while($row=mysqli_fetch_array($result)){
 				if($pos==0) {$response["count"]=$row['tot'];}

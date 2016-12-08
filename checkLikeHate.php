@@ -24,7 +24,8 @@
 					
 
 				$response["trick".$pos]=$row['trick'];
-				$response["hol".$pos]=$row['hateLike'];			
+
+				$response["hol".$pos]=$row['hateLike'];	
 				$pos++;	
 			}//chiudo while
 

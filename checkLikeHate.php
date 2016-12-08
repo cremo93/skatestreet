@@ -17,7 +17,7 @@
 		// query non corretta
 		if($result){
 			$pos=0;
-			
+			$tot=$row['tot'];
 			//scandisci
 			while($row=mysqli_fetch_array($result)){
 				if($pos==0) {$response["count"]==$row['tot'];}
@@ -32,7 +32,7 @@
 			// setterai ogni elemento come clickable
 			if($pos==0) {$response["hol".$pos]=2;}
 				
-
+			$response["count"]=$tot;
 			$response["success"]=1;
 			$response["message"]="Your hate or like!";
 		} // chiudo result

@@ -11,13 +11,15 @@
 	if (isset($_GET['user']) && isset($_GET['tricks']) && isset($_GET['rate'])){
 		$_GET['tricks']=str_replace("_"," ",$_GET['tricks']);
 
-		$query="SELECT COUNT(*) as TOT,rate FROM rates WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";
-		echo $query;
+		$query="SELECT COUNT(*) as tot,rate FROM rates WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";
+
+
 		$result=mysqli_query($conn,$query);
 		if($result){
-			$tot=mysqli_fetch_array($result);
-			$tot=$row['TOT'];
+			$row=mysqli_fetch_array($result);
+			$tot=$row['tot'];
 			echo $tot;
+
 			if($tot>0){
 				$old_rate=$row['rate'];
 				$query="UPDATE rates SET rate=".$_GET['rate']." WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";

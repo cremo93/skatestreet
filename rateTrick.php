@@ -18,7 +18,7 @@
 		if($result){
 			$row=mysqli_fetch_array($result);
 			$tot=$row['tot'];
-			echo $tot;
+
 
 			if($tot>0){
 				$old_rate=$row['rate'];

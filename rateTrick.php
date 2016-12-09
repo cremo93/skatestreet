@@ -16,7 +16,7 @@
 		if($result){
 			$tot=mysqli_fetch_array($result);
 			$tot=$row['TOT'];
-
+			echo $tot;
 			if($tot>0){
 				$old_rate=$row['rate'];
 				$query="UPDATE rates SET rate=".$_GET['rate']." WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";

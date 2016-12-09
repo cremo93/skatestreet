@@ -16,12 +16,14 @@
 		$result=mysqli_query($conn,$query);
 
 		if($result){
-			$row=mysqli_fetch_result($result);
-			if ($row['rate']==null){
+			$numrows=mysqli_num_rows($result);
+			
+			if ($numrows>0){
+				$row=mysqli_fetch_result($result);
 				$response["rate"]=$row['rate'];
 			}
 			else{
-				$response["rate"]=$row['rate'];
+				$response["rate"]=0;
 			}
 			
 			$response["success"]=1;

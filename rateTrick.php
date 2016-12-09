@@ -12,6 +12,7 @@
 		$_GET['tricks']=str_replace("_"," ",$_GET['tricks']);
 
 		$query="SELECT COUNT(*) as TOT,rate FROM rates WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";
+		echo $query;
 		$result=mysqli_query($conn,$query);
 		if($result){
 			$tot=mysqli_fetch_array($result);

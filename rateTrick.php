@@ -37,6 +37,11 @@
 					if($result){
 						$response["success"]=1;
 						$response["message"]="Update your rate!";
+
+						$query="SELECT rating FROM tricks WHERE name='".$_GET['tricks']."'";
+						$result=mysqli_query($conn,$query);
+						$row=mysqli_fetch_array($result);
+						$response["rating"]=$row['rating'];
 					}
 					else{
 						$response["success"]=0;
@@ -63,6 +68,11 @@
 					if($result){
 						$response["message"]="Correct!";
 						$response["success"]=1;
+
+						$query="SELECT rating FROM tricks WHERE name='".$_GET['tricks']."'";
+						$result=mysqli_query($conn,$query);
+						$row=mysqli_fetch_array($result);
+						$response["rating"]=$row['rating'];
 					}
 					else{
 						$response["message"]="Oops! Update error!";

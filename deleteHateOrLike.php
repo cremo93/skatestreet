@@ -21,7 +21,7 @@
 				$query="UPDATE tricks SET dislike=dislike-1 WHERE name='".$_GET['tricks']."'";				
 			}
 			else{
-				$query="UPDATE tricks SET like=like-1 WHERE name='".$_GET['tricks']."'";				
+				$query="UPDATE tricks SET likeSum=likeSum-1 WHERE name='".$_GET['tricks']."'";				
 			}
 
 			$result=mysqli_query($conn,$query);

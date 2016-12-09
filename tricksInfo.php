@@ -29,7 +29,7 @@
 			$response["image_url".$pos]=$row['image_url'];
 			$response["video_id".$pos]=$row['video_id'];
 			$response["rating".$pos]=$row['rating'];
-			$response["like".$pos]=$row['like'];
+			$response["like".$pos]=$row['likeSum'];
 			$response["dislike".$pos]=$row['dislike'];
 			$response["rating_counter".$pos]=$row['rating_counter'];
 			$pos++;

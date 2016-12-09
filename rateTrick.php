@@ -25,8 +25,8 @@
 				$query="UPDATE rates SET rate=".$_GET['rate']." WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";
 				$result=mysqli_query($conn,$query);
 				if($result){
-					$toSum=$_GET['rate']-$old_rate;
-					$query="UPDATE tricks SET rating=(rating+".$toSum.")/(rating_counter) WHERE name='".$_GET['tricks']."'";
+					
+					$query="UPDATE tricks SET rating=(rating-".$old_rate."+".$_GET['rate'].")/(rating_counter) WHERE name='".$_GET['tricks']."'";
 					
 					$result=mysqli_query($conn,$query);
 					

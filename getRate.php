@@ -19,7 +19,7 @@
 			$numrows=mysqli_num_rows($result);
 			
 			if ($numrows>0){
-				$row=mysqli_fetch_result($result);
+				$row=mysqli_fetch_array($result);
 				$response["rate"]=$row['rate'];
 			}
 			else{

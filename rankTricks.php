@@ -10,21 +10,21 @@
 
 	if (isset($_GET['rankby'])){
 		$query="";
-		switch($_GET['rankby']){
+		
 			//five most liked
-			case 0:
+			if($_GET['rankby']==0)
 				$query="SELECT * FROM tricks ORDER BY likeSum DESC LIMIT 0,5";
 				
-			break;
 			
-			case 1:
+			
+			if($_GET['rankby']==1)
 				$query="SELECT * FROM tricks ORDER BY dislike DESC LIMIT 0,5";
-			break;
+
 			
-			case 2:
+			if($_GET['rankby']==2)
 				$query="SELECT * FROM tricks ORDER BY rating DESC LIMIT 0,5";
-			break;
-		}
+
+		
 		$result=mysqli_query($conn,$query);
 			if($result){
 						

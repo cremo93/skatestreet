@@ -27,7 +27,7 @@
 		
 		$result=mysqli_query($conn,$query);
 			if($result){
-						
+				$pos=0;		
 				while($row=mysqli_fetch_result($result)){
 					$response["name".$pos]=$row['name'];
 					$response["image_url".$pos]=$row['image_url'];
@@ -36,6 +36,7 @@
 					$response["like".$pos]=$row['likeSum'];
 					$response["dislike".$pos]=$row['dislike'];
 					$response["rating_counter".$pos]=$row['rating_counter'];
+					$pos++;
 					}
 				$response["success"]=1;
 				$response["message"]="Rank!";

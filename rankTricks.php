@@ -28,7 +28,7 @@
 		$result=mysqli_query($conn,$query);
 			if($result){
 						
-				for($pos=0;$pos<5;$pos++){
+				while($row=mysqli_fetch_result($result){
 					$response["name".$pos]=$row['name'];
 					$response["image_url".$pos]=$row['image_url'];
 					$response["video_id".$pos]=$row['video_id'];

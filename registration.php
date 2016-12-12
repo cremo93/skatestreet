@@ -8,7 +8,7 @@
 	
 	$response=array();
 
-	if( isset($_GET['user']) && strlen($_GET['user'])<21 ){
+	if( isset($_GET['user']) && strlen($_GET['user'])<21 && strlen($_GET['user']>5)){
 		
 		$query="SELECT username FROM users WHERE username='".$_GET['user']."'";
 		$result=mysqli_query($conn,$query);
@@ -53,7 +53,7 @@
 	}
 	// username lungo o non in $_GET
 	else{
-		$response["message"]="Name is not inserted or name's length is over 20 characters";
+		$response["message"]="Name is not inserted or name's length is not between 6-20 characters";
 		$response["success"]=0;
 	}
 

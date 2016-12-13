@@ -53,7 +53,7 @@
 	}
 	// username lungo o non in $_GET
 	else{
-		$response["message"]="Name is not inserted or name's length is not between 6-20 characters";
+		$response["message"]="Name is not inserted or the written name's length is not between 6 and 20 characters";
 		$response["success"]=0;
 	}
 

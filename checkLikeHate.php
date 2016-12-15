@@ -11,6 +11,7 @@
 	$response=array();
 	
 	if(isset($_GET['user'])){
+		$_GET['user']=str_replace("~"," ",$_GET['user']);
 		$query="SELECT trick,hateLike FROM likes WHERE user='".$_GET['user']."'";
 		$result=mysqli_query($conn,$query);
 

@@ -11,6 +11,7 @@
 
 	if (isset($_GET['user']) && isset($_GET['tricks'])){
 		$_GET['tricks']=str_replace("_"," ",$_GET['tricks']);
+		$_GET['user']=str_replace("~"," ",$_GET['user']);
 		$query="SELECT rate FROM rates WHERE user='".$_GET['user']."' AND tricks='".$_GET['tricks']."'";
 
 		$result=mysqli_query($conn,$query);

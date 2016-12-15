@@ -10,6 +10,7 @@
 	
 	if (isset($_GET['user']) && isset($_GET['tricks']) && isset($_GET['flag'])){
 		$_GET['tricks']=str_replace("_"," ",$_GET['tricks']);
+		$_GET['user']=str_replace("~"," ",$_GET['user']);
 		// flag=0->hate; flag=1->like
 		$query="INSERT INTO likes VALUES ('".$_GET['user']."','".$_GET['tricks']."',".$_GET['flag'].")";
 		$result=mysqli_query($conn,$query);
